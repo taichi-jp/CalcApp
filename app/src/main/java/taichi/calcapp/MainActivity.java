@@ -2,6 +2,7 @@ package taichi.calcapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,9 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        String editText1Str = editText1.getText().toString();
+        String editText2Str = editText2.getText().toString();
+        if (TextUtils.isEmpty(editText1Str) || TextUtils.isEmpty(editText2Str)) { return; }
+        Float val1 = Float.valueOf(editText1Str);
+        Float val2 = Float.valueOf(editText2Str);
+
         Intent intent = new Intent(this, ResultActivity.class);
-        Float val1 = Float.valueOf(editText1.getText().toString());
-        Float val2 = Float.valueOf(editText2.getText().toString());
         if (v.getId() == R.id.buttonPlus) {
             intent.putExtra("VALUE", val1 + val2);
         } else if (v.getId() == R.id.buttonMinus) {

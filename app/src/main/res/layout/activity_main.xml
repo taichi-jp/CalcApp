@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText1"
-        android:inputType="number"/>
+        android:inputType="numberDecimal|numberSigned"/>
 
     <LinearLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -51,6 +51,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
-        android:inputType="number"/>
+        android:inputType="numberDecimal|numberSigned"/>
 
 </LinearLayout>
